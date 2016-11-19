@@ -1,0 +1,26 @@
+{
+  "name": "load-icon",
+  "version": "1.0.0",
+  "description": "用于上传过程中显示的图标，矢量化配置，基于zepto.js",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.18.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "node-sass": "^3.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiruifeng/load-icon.git"
+  },
+  "author": "WeiRuifeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weiruifeng/load-icon/issues"
+  },
+  "homepage": "https://github.com/weiruifeng/load-icon#readme"
+}

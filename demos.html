@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加载按钮</title>
+    <link rel="stylesheet" href="dist/load.css">
+    <script src="lib/zepto/1.1.6/zepto.js"></script>
+    <script src="dist/load.js"></script>
+</head>
+<body style="background: #333333">
+<div id="load"></div>
+<div id="load1"></div>
+<div id="load2"></div>
+<div id="load3"></div>
+<div id="load4"></div>
+<div id="load5"></div>
+<script>
+    $(function() {
+        var option = {
+            dom:  $('#load1'),
+            width:  '3rem',
+            height: '3rem',
+            scale: 0.5,
+            position: 'relative',
+            background: 'rgba(0,0,0,1)',
+            long: 0.4
+        };
+        var option1 = {
+            dom:  $('#load1'),
+            width:  '100px',
+            height: '100px'
+        };
+        var option2 = {
+            dom:  $('#load2'),
+            width:  '200px',
+            height: '100px',
+            scale: 0.5
+        };
+
+        var option3 = {
+            dom:  $('#load3'),
+            width:  '100px',
+            height: '100px',
+            scale: 0.5,
+            background: 'rgba(255,0,0,0.6)'
+        };
+
+        var option4 = {
+            dom:  $('#load4'),
+            width:  '100px',
+            height: '100px',
+            scale: 0.5,
+            background: 'rgba(255,0,0,0.6)',
+            color: '#000000'
+        };
+        var option5 = {
+            dom:  $('#load5'),
+            width:  '100px',
+            height: '100px',
+            scale: 0.5,
+            background: 'rgba(255,0,0,0.6)',
+            color: '#000000',
+            long: 0.8
+        };
+
+        (new LoadStyle()).init();
+        (new LoadStyle(option1)).init();
+        (new LoadStyle(option2)).init();
+        (new LoadStyle(option3)).init();
+        (new LoadStyle(option4)).init();
+        (new LoadStyle(option5)).init();
+    });
+</script>
+</body>
+</html>

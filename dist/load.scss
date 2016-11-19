@@ -1,0 +1,106 @@
+$background: #535353;
+$load-color: #fcfcfc;
+$load: load;
+$radius: 0.02em;
+
+@mixin before-after-init() {
+  content: '';
+  display:block;
+  width: .06em;
+  height: .2em;
+  background: $load-color;
+  margin-left: .02em;
+  position: absolute;
+}
+
+@mixin child() {
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){-webkit-transform:rotate(30deg * $i);}
+  }
+}
+
+@mixin child-animation() {
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){
+      &:before {
+        -webkit-animation: $load 1.2s linear 1s * $i / 10 - 0.1s  infinite;
+      }
+      &:after {
+        -webkit-animation: $load 1.2s linear 1s * $i / 10 + 0.5s  infinite;
+      }
+    }
+  }
+}
+
+@mixin keyframes($load) {
+  @-webkit-keyframes #{$load} {
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
+  }
+  @-moz-keyframes #{$load} {
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
+  }
+  @keyframes #{$load} {
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
+  }
+}
+
+@mixin center() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%,-50%,0);
+}
+
+.load-box {
+  font-size: 20px;
+  width: 1em;
+  height: 1em;
+  @include center;
+
+  .circle-shade {
+    @include center;
+    width: .5em;
+    height: .5em;
+    border-radius: 50%;
+  }
+
+  i {
+    display: block;
+    position: absolute;
+    left: 0.45em;
+    top: 0;
+    width: 0.1em;
+    height: 1em;
+    //background: #FF0000;
+    @include keyframes($load);
+    @include child;
+    @include child-animation;
+    &:before {
+      @include before-after-init;
+      top: 0;
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
+    &:after{
+      @include before-after-init;
+      bottom: 0;
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+  }
+}
